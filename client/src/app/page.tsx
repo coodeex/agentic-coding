@@ -1,63 +1,83 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-4xl flex-col justify-between py-16 px-6 sm:px-8 lg:px-16">
+        {/* Header */}
+        <div className="flex flex-col gap-2">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black dark:text-white">
+            Agentic Coding
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
+            Exploring how Claude can be used as an AI coding agent to automate development workflows and improve productivity.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Main Content */}
+        <div className="flex flex-col gap-12">
+          {/* Project Overview */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-black dark:text-white">
+              About This Project
+            </h2>
+            <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-2xl">
+              This is a collection of notes, ideas, and experiments exploring agentic patterns in development.
+              We&apos;re testing how Claude can analyze issues, plan solutions, implement fixes, run tests, and manage
+              the entire development workflow autonomously.
+            </p>
+          </section>
+
+          {/* Key Features */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-black dark:text-white">
+              Key Capabilities
+            </h2>
+            <ul className="space-y-3">
+              {[
+                "Automated issue analysis and implementation",
+                "Custom slash commands for repetitive workflows",
+                "Daily session logging and automated commits",
+                "Parallel task execution with git worktrees",
+                "Desktop notifications for Claude input requests",
+                "Test-driven development workflows"
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">→</span>
+                  <span className="text-base text-zinc-700 dark:text-zinc-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Quick Links */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-black dark:text-white">
+              Get Started
+            </h2>
+            <p className="text-base text-zinc-700 dark:text-zinc-300 mb-4">
+              Explore the project and see how agentic coding works:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://github.com/yourusername/agentic-coding"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-black dark:bg-white text-white dark:text-black font-medium transition-colors hover:bg-zinc-800 dark:hover:bg-zinc-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+              </a>
+              <a
+                href="#documentation"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 text-black dark:text-white font-medium transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
+              >
+                Read Documentation
+              </a>
+            </div>
+          </section>
+        </div>
+
+        {/* Footer */}
+        <div className="text-sm text-zinc-600 dark:text-zinc-500 border-t border-zinc-200 dark:border-zinc-800 pt-8">
+          <p>Built with Next.js 16 and Tailwind CSS • Powered by Claude AI</p>
         </div>
       </main>
     </div>
