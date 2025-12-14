@@ -12,25 +12,25 @@ This is a collection of notes and ideas about agentic coding with Claude.
 - [ ] Create CLAUDE.md file
 - [ ] Create github project with issues and try out if claude can pick up the issue, plan and implement the solution. Use a custom slash command to trigger this.
 - [ ] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
-        TDD workflow:
-        - write tests
-        - run test and confirm they fail
-        - commit tests
-        - write code that passes the tests
-        - commit
+  - TDD workflow:
+    - write tests
+    - run test and confirm they fail
+    - commit tests
+    - write code that passes the tests
+    - commit
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
-- [ ] Use git worktrees 
-        This approach shines.
-        Lightweight approach to multiple checkouts
-        - Create worktrees: 		 worktree add ../project-feature-a feature-a
-        - Launch Claude in each worktree: 		cd ../project-feature-a && claude
-        - Create additional worktrees as needed (repeat steps 1-2 in new terminal tabs)
-        Some tips:
-            - use good names
-            - one terminal per worktree
-            - setup notifications when Claude needs attention
-            - use separate IDE windows for different worktrees
-            - clean up the worktree when done: 	git worktree remove ../project-feature-a
+- [ ] Use git worktrees
+  - This approach shines.
+  - Lightweight approach to multiple checkouts
+  - Create worktrees: 		 worktree add ../project-feature-a feature-a
+  - Launch Claude in each worktree: 		cd ../project-feature-a && claude
+  - Create additional worktrees as needed (repeat steps 1-2 in new terminal tabs)
+  - Some tips:
+    - use good names
+    - one terminal per worktree
+    - setup notifications when Claude needs attention
+    - use separate IDE windows for different worktrees
+    - clean up the worktree when done: 	git worktree remove ../project-feature-a
 
 - [ ] Configure a desktop notification when there is a notification from claude waiting for my input.
 - [ ] If there is going to be a DB in this project, try to create a local database sub agent that can pull data from the local database. This could look into the prisma files to understand the schema and then use postgres MCP etc way to pull data from the database.
@@ -81,12 +81,14 @@ This is a collection of notes and ideas about agentic coding with Claude.
 
 #### Use /reset to keep context focused
 - in long sessions, resetting the context window helps to keep Claude focused
+
 Example: One Claude writes code, another Claude reviews the code
 - use Claude to write code
 - /reset
 - review the code, write the review somewhere?
 - /reset
 - read both the code and the review and this claude would edit the code based on the feedback
+
 ###### RULE of thumb: one Claude does one thing
 
 #### Use checklists and scratchpads for complex workflows
@@ -110,13 +112,6 @@ Example: One Claude writes code, another Claude reviews the code
 - hooks
 - headless mode
 - MCP
-
-
-
-
-
-
-
 
 
 
