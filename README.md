@@ -6,9 +6,13 @@ This is a collection of notes and ideas about agentic coding with Claude.
 
 ## TODO
 
-- [ ] Use session end hook to log what is done in that sessions into daily log file.
+- [x] Use log-commit-push command to log session work into daily log file, create a commit message and push to remote
+  - Implemented `/log-commit-push` command for automated daily logging, commit, and push workflow
+  - Added `.claude/commands/log-commit-push.md` with step-by-step automation
+- [x] Create claude settings
+  - Added `.claude/settings.json` with notification hook configuration
+  - Desktop notifications enabled for user alerts when input is needed
 - [ ] Initialise the project with nextjs 16 quickly
-- [ ] Create claude settings
 - [ ] Create CLAUDE.md file
 - [ ] Create github project with issues and try out if claude can pick up the issue, plan and implement the solution. Use a custom slash command to trigger this.
 - [ ] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
