@@ -12,7 +12,7 @@ This is a collection of notes and ideas about agentic coding with Claude.
 - [x] Create claude settings
   - Added `.claude/settings.json` with notification hook configuration
   - Desktop notifications enabled for user alerts when input is needed
-- [ ] Initialise the project with nextjs 16 quickly
+- [x] Initialise the project with nextjs 16 quickly
 - [ ] Create CLAUDE.md file
 - [ ] Create github project with issues and try out if claude can pick up the issue, plan and implement the solution. Use a custom slash command to trigger this.
 - [ ] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
