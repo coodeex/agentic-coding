@@ -46,7 +46,6 @@ Log directory: logs
 
 Log file path: logs/YYYY-MM-DD.md
 
-If the directory does not exist, create it.
 If the file does not exist, create it.
 
 Step 4: Write a change summary to today’s log
@@ -103,13 +102,7 @@ Run:
 
 git add logs/YYYY-MM-DD.md
 
-Step 7: Commit
-
-Commit using the generated commit message:
-
-git commit -m "<commit message>"
-
-Step 8: Check and update README TODOs
+Step 7: Check and update README TODOs
 
 Review the README.md file and check if any TODO items have been completed by this session's work:
 
@@ -119,15 +112,30 @@ Review the README.md file and check if any TODO items have been completed by thi
    - Change `[ ]` to `[x]`
    - Add 1–2 bullet points below it describing what was done to complete it
    - Follow the existing completed TODO style (see examples in README.md like "Use log-commit-push command...")
-4. If changes were made to README.md, stage and commit them:
+4. If changes were made to README.md, run:
    ```bash
    git add README.md
-   git commit --amend --no-edit
    ```
 
 If no TODOs are completed, skip this step.
 
-Step 9: Push
+Step 8: Ask user to confirm commit message
+
+Display the generated commit message to the user and ask:
+
+"Is this commit message good?"
+
+Options:
+- Yes: Proceed to Commit and Push
+- No: Ask the user to provide a better commit message, then store the new message and proceed to Step 9
+
+Step 9: Commit
+
+Commit using the confirmed commit message:
+
+git commit -m "<commit message>"
+
+Step 10: Push
 
 Run:
 
