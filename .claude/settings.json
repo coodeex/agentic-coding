@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "allow": ["Edit"]
+    "allow": ["Edit", "Create", "Delete", "Read"]
   },
   "hooks": {
     "Notification": [
