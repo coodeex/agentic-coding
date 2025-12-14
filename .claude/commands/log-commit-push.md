@@ -119,24 +119,19 @@ Review the README.md file and check if any TODO items have been completed by thi
 
 If no TODOs are completed, skip this step.
 
-Step 8: Ask user to confirm commit message
 
-Display the generated commit message to the user and ask:
+Step 8: Commit
 
-"Is this commit message good?"
-
-Options:
-- Yes: Proceed to Commit and Push
-- No: Ask the user to provide a better commit message, then store the new message and proceed to Step 9
-
-Step 9: Commit
-
-Commit using the confirmed commit message:
+Commit using the generated commit message:
 
 git commit -m "<commit message>"
 
-Step 10: Push
+Step 9: Push
 
 Run:
 
 git push
+
+Step 10: Success message
+
+Show a short success message with relevant emojis for the commit and display the commit message.
