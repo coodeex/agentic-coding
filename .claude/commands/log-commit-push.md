@@ -109,7 +109,25 @@ Commit using the generated commit message:
 
 git commit -m "<commit message>"
 
-Step 8: Push
+Step 8: Check and update README TODOs
+
+Review the README.md file and check if any TODO items have been completed by this session's work:
+
+1. Read the README.md file
+2. Identify any TODO items (marked with `[ ]`) that correspond to work done in this session
+3. For each completed TODO:
+   - Change `[ ]` to `[x]`
+   - Add 1–2 bullet points below it describing what was done to complete it
+   - Follow the existing completed TODO style (see examples in README.md like "Use log-commit-push command...")
+4. If changes were made to README.md, stage and commit them:
+   ```bash
+   git add README.md
+   git commit --amend --no-edit
+   ```
+
+If no TODOs are completed, skip this step.
+
+Step 9: Push
 
 Run:
 
