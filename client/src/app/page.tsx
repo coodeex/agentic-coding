@@ -66,7 +66,7 @@ export default function Home() {
                 View on GitHub
               </a>
               <a
-                href="/docs"
+                href="#documentation"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 text-black dark:text-white font-medium transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
               >
                 Read Documentation
