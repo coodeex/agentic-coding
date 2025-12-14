@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'Claude Code' 'Awaiting your input'"
+          }
+        ]
+      }
+    ]
+  }
+}
