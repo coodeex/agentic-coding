@@ -126,6 +126,12 @@ Example: One Claude writes code, another Claude reviews the code
 
 
 
+## References
+
+- https://code.claude.com/docs
+- https://www.anthropic.com/engineering/claude-code-best-practices
+
+
 
 
 
