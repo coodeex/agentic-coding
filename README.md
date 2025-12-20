@@ -21,12 +21,11 @@ This is a collection of notes and ideas about agentic coding with Claude.
   - Successfully analyzed and implemented fix for issue #1 (update page.tsx to reflect project scope)
   - Command uses `gh issue view` to get details, implements changes, runs linting/build, and creates commits
 - [ ] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
-  - TDD workflow:
-    - write tests
-    - run test and confirm they fail
-    - commit tests
-    - write code that passes the tests
-    - commit
+  - Set up Jest testing infrastructure with Next.js and React Testing Library
+    - Added ESLint Jest plugin for test file linting rules
+    - Created jest.config.ts with jsdom test environment and coverage support
+    - Added test scripts: `npm test`, `test:watch`, `test:coverage`, `test:ci`
+    - Implemented initial test files for layout and pages with React Testing Library
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
 - [ ] Use git worktrees
   - This approach shines.
