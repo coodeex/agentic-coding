@@ -26,6 +26,10 @@ This is a collection of notes and ideas about agentic coding with Claude.
     - Created jest.config.ts with jsdom test environment and coverage support
     - Added test scripts: `npm test`, `test:watch`, `test:coverage`, `test:ci`
     - Implemented initial test files for layout and pages with React Testing Library
+  - Added Playwright e2e testing framework and CI/CD integration
+    - Created playwright.config.ts with multi-browser setup (Chromium, Firefox, WebKit)
+    - Set up GitHub Actions workflow for automated test execution on push and PRs
+    - Added example Playwright test spec with HTML reporting
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
 - [ ] Use git worktrees
   - This approach shines.
