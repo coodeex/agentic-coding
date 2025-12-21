@@ -14,5 +14,14 @@
         ]
       }
     ]
-  }
+  },
+  "env": {
+    "CLAUDE_CODE_USE_VERTEX": "1",
+    "CLOUD_ML_REGION": "global",
+    "DISABLE_PROMPT_CACHING": "1",
+    "VERTEX_REGION_CLAUDE_4_5_HAIKU": "europe-west1",
+    "VERTEX_REGION_CLAUDE_4_5_SONNET": "global",
+    "VERTEX_REGION_CLAUDE_4_5_OPUS": "global"
+  },
+  "model": "claude-haiku-4-5@20251001"
 }
