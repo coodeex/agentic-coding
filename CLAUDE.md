@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is an agentic coding project exploring how Claude can be used as an AI coding agent. It currently contains a Next.js 16 client application as the main deliverable. The project emphasizes automation, workflow optimization, and exploring agentic patterns in development.
 
+## Principles
+
+- **Test-Driven Development**: Write failing tests first, then write the code to pass the tests.
+
 ## Project Structure
 
 ```
