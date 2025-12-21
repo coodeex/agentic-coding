@@ -58,7 +58,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://github.com/yourusername/agentic-coding"
+                href="https://github.com/coodeex/agentic-coding"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-black dark:bg-white text-white dark:text-black font-medium transition-colors hover:bg-zinc-800 dark:hover:bg-zinc-200"
                 target="_blank"
                 rel="noopener noreferrer"

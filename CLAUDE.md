@@ -102,6 +102,9 @@ The layout applies global Tailwind styles and uses Next.js 16's built-in dark mo
 - **Desktop notifications**: Enabled in settings.json for input requests
 - **Tool restrictions**: Currently only `Edit` tool is allowed (see `.claude/settings.json`)
 - **Hooks**: Desktop notification hook configured for when Claude awaits user input
+- **Specialized agents**: 
+  - `test-quality-guardian` - Use BEFORE implementing features/fixes to write failing tests first
+  - `test-maintenance-agent` - Use AFTER code changes to fix broken tests and maintain suite health
 
 To adjust tool permissions, use `/permissions` command.
 
