@@ -20,7 +20,7 @@ This is a collection of notes and ideas about agentic coding with Claude.
   - Created `/fix-github-issue` custom slash command for automated GitHub issue analysis and fixing
   - Successfully analyzed and implemented fix for issue #1 (update page.tsx to reflect project scope)
   - Command uses `gh issue view` to get details, implements changes, runs linting/build, and creates commits
-- [ ] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
+- [x] Try common workflow: b. Write tests, commit; code, iterate, commit. This involves creating sub agents to handle different tasks.
   - Set up Jest testing infrastructure with Next.js and React Testing Library
     - Added ESLint Jest plugin for test file linting rules
     - Created jest.config.ts with jsdom test environment and coverage support
@@ -30,6 +30,11 @@ This is a collection of notes and ideas about agentic coding with Claude.
     - Created playwright.config.ts with multi-browser setup (Chromium, Firefox, WebKit)
     - Set up GitHub Actions workflow for automated test execution on push and PRs
     - Added example Playwright test spec with HTML reporting
+  - Configured and verified Playwright e2e tests for Next.js client
+    - Enabled baseURL and webServer configuration to auto-start dev server on port 3000
+    - Added npm scripts for running e2e tests: `pnpm e2e`, `pnpm e2e:ui`, `pnpm e2e:debug`, and browser-specific variants
+    - Implemented comprehensive home page test suite with 9 test cases covering all sections
+    - Verified all tests passing successfully across chromium browser
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
 - [ ] Use git worktrees
   - This approach shines.
