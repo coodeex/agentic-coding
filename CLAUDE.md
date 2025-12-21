@@ -84,7 +84,7 @@ The layout applies global Tailwind styles and uses Next.js 16's built-in dark mo
 ### Recommended Process
 
 1. **Make changes** to the codebase
-2. **Test locally** with `npm run dev`
+2. **Run locally** with `npm run dev`
 3. **Lint and fix** with `npm run lint -- --fix`
 4. **Verify changes** with the development server
 5. **Use `/log-commit-push`** to automate commit and push
@@ -112,3 +112,101 @@ To adjust tool permissions, use `/permissions` command.
 - Use `/reset` to clear context in long sessions
 - Multiple Claude instances can work in parallel using git worktrees
 - Notifications alert when Claude needs user input
+
+
+# run-tests
+
+Run unit and e2e tests with options for coverage and specific test files.
+
+## Test Structure
+
+The project contains two types of tests:
+
+### Unit Tests (Jest)
+- **Location**: `client/src/**/__tests__/*.test.tsx`
+- **Count**: 18 tests across 3 test suites
+- **Framework**: Jest with React Testing Library
+- **Coverage**: Tests for layout, home page, and docs page
+
+### E2E Tests (Playwright)
+- **Location**: `tests/example.spec.ts`
+- **Count**: 9 tests × 3 browsers (27 total)
+- **Browsers**: Chromium, Firefox, WebKit
+- **Framework**: Playwright Test
+- **Focus**: Home page UI verification and interactions
+
+## Usage
+
+```
+/run-tests [type] [options]
+```
+
+## Arguments
+
+- `type` (optional): Test type to run
+  - `unit` - Run Jest unit tests only
+  - `e2e` - Run Playwright e2e tests (all browsers)
+  - `all` - Run both unit and e2e tests (default)
+
+- `options` (optional):
+  - `--coverage` - Include coverage report (unit tests only)
+  - `--watch` - Run in watch mode (unit tests only)
+  - `--ui` - Run e2e tests in UI mode
+  - `--debug` - Run e2e tests with debugger
+  - `--chromium` - Run e2e tests on Chromium only
+  - `--firefox` - Run e2e tests on Firefox only
+  - `--webkit` - Run e2e tests on WebKit only
+
+## Examples
+
+```bash
+/run-tests unit
+/run-tests e2e
+/run-tests e2e --ui
+/run-tests all --coverage
+/run-tests unit --watch
+/run-tests e2e --chromium
+/run-tests e2e --debug
+```
+
+## Implementation
+
+Run the appropriate test command from the correct directory:
+
+```bash
+# Unit tests (from client directory)
+cd client && pnpm test
+
+# Unit tests with coverage
+cd client && pnpm test:coverage
+
+# Unit tests in watch mode
+cd client && pnpm test:watch
+
+# Unit tests for CI environment
+cd client && pnpm test:ci
+
+# E2E tests (all browsers - from root directory)
+pnpm e2e
+
+# E2E tests on specific browser
+pnpm e2e:chromium
+pnpm e2e:firefox
+pnpm e2e:webkit
+
+# E2E tests in UI mode
+pnpm e2e:ui
+
+# E2E tests with debugger
+pnpm e2e:debug
+```
+
+## Test Results to Report
+
+When running tests, report:
+- Number of tests passed/failed for each suite
+- Total test count (unit + e2e)
+- Coverage percentage (if requested)
+- Browser coverage for e2e tests
+- Any test failures or warnings
+- Total execution time
