@@ -30,11 +30,12 @@ This is a collection of notes and ideas about agentic coding with Claude.
     - Created playwright.config.ts with multi-browser setup (Chromium, Firefox, WebKit)
     - Set up GitHub Actions workflow for automated test execution on push and PRs
     - Added example Playwright test spec with HTML reporting
-  - Configured and verified Playwright e2e tests for Next.js client
+  - Configured and verified Playwright e2e tests for Next.js client. Run in the CI with the `[e2e]` flag in the commit message or PR description.
     - Enabled baseURL and webServer configuration to auto-start dev server on port 3000
     - Added npm scripts for running e2e tests: `pnpm e2e`, `pnpm e2e:ui`, `pnpm e2e:debug`, and browser-specific variants
     - Implemented comprehensive home page test suite with 9 test cases covering all sections
     - Verified all tests passing successfully across chromium browser
+    - Configured GitHub Actions workflow to run e2e tests only when `[e2e]` flag is present in commit message or PR description!!
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
 - [ ] Use git worktrees
   - This approach shines.

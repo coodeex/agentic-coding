@@ -10,21 +10,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Check for test flag in commit message
+      id: check_flag
+      run: |
+        if [[ "${{ github.event.head_commit.message }}" == *"[e2e]"* ]] || [[ "${{ github.event.pull_request.body }}" == *"[e2e]"* ]]; then
+          echo "has_flag=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_flag=false" >> $GITHUB_OUTPUT
+        fi
     - uses: actions/setup-node@v4
+      if: steps.check_flag.outputs.has_flag == 'true'
       with:
         node-version: lts/*
     - name: Install dependencies
+      if: steps.check_flag.outputs.has_flag == 'true'
       run: npm install -g pnpm && pnpm install && cd client && pnpm install
     - name: Check CI environment variable
+      if: steps.check_flag.outputs.has_flag == 'true'
       run: echo "CI environment variable is ${{ env.CI }}"
     - name: Install Playwright Browsers
+      if: steps.check_flag.outputs.has_flag == 'true'
       run: pnpm exec playwright install --with-deps
     - name: Build Next.js application
+      if: steps.check_flag.outputs.has_flag == 'true'
       run: cd client && pnpm build
     - name: Run Playwright tests
+      if: steps.check_flag.outputs.has_flag == 'true'
       run: pnpm exec playwright test
     - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+      if: ${{ !cancelled() && steps.check_flag.outputs.has_flag == 'true' }}
       with:
         name: playwright-report
         path: playwright-report/
