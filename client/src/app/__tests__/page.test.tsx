@@ -5,26 +5,38 @@ import Home from '../page'
 jest.mock('next-auth/react', () => ({
   useSession: jest.fn(() => ({
     data: null,
-    status: 'unauthenticated'
-  }))
+    status: 'unauthenticated',
+  })),
 }))
 
 describe('Home Page', () => {
   it('renders the main heading', () => {
     render(<Home />)
-    expect(screen.getByRole('heading', { level: 1, name: /agentic coding/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 1, name: /agentic coding/i })
+    ).toBeInTheDocument()
   })
 
   it('renders the subtitle text', () => {
     render(<Home />)
-    expect(screen.getByText(/exploring how claude can be used as an ai coding agent/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        /exploring how claude can be used as an ai coding agent/i
+      )
+    ).toBeInTheDocument()
   })
 
   it('renders all main sections', () => {
     render(<Home />)
-    expect(screen.getByRole('heading', { name: /about this project/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /key capabilities/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /get started/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /about this project/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /key capabilities/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /get started/i })
+    ).toBeInTheDocument()
   })
 
   it('renders all capability items', () => {
@@ -35,10 +47,10 @@ describe('Home Page', () => {
       'Daily session logging and automated commits',
       'Parallel task execution with git worktrees',
       'Desktop notifications for Claude input requests',
-      'Test-driven development workflows'
+      'Test-driven development workflows',
     ]
 
-    capabilities.forEach(capability => {
+    capabilities.forEach((capability) => {
       expect(screen.getByText(capability)).toBeInTheDocument()
     })
   })
@@ -47,7 +59,10 @@ describe('Home Page', () => {
     render(<Home />)
     const githubLink = screen.getByRole('link', { name: /view on github/i })
     expect(githubLink).toBeInTheDocument()
-    expect(githubLink).toHaveAttribute('href', 'https://github.com/coodeex/agentic-coding')
+    expect(githubLink).toHaveAttribute(
+      'href',
+      'https://github.com/coodeex/agentic-coding'
+    )
     expect(githubLink).toHaveAttribute('target', '_blank')
     expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer')
   })
@@ -61,17 +76,25 @@ describe('Home Page', () => {
 
   it('renders the footer text', () => {
     render(<Home />)
-    expect(screen.getByText(/built with next.js 16 and tailwind css/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(/built with next.js 16 and tailwind css/i)
+    ).toBeInTheDocument()
   })
 
   it('renders the project overview text', () => {
     render(<Home />)
-    expect(screen.getByText(/collection of notes, ideas, and experiments/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(/collection of notes, ideas, and experiments/i)
+    ).toBeInTheDocument()
   })
 
   it('renders sign in section when unauthenticated', () => {
     render(<Home />)
-    expect(screen.getByRole('heading', { name: /sign in to continue/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /sign in with google/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /sign in to continue/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /sign in with google/i })
+    ).toBeInTheDocument()
   })
 })

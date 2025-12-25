@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { useSession } from "next-auth/react";
-import { SignIn } from "@/components/SignIn";
-import { UserProfile } from "@/components/UserProfile";
+import { useSession } from 'next-auth/react'
+import { SignIn } from '@/components/SignIn'
+import { UserProfile } from '@/components/UserProfile'
 
 export default function Home() {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
@@ -17,7 +17,8 @@ export default function Home() {
               Agentic Coding
             </h1>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
-              Exploring how Claude can be used as an AI coding agent to automate development workflows and improve productivity.
+              Exploring how Claude can be used as an AI coding agent to automate
+              development workflows and improve productivity.
             </p>
           </div>
           {session && <UserProfile session={session} />}
@@ -41,9 +42,10 @@ export default function Home() {
               About This Project
             </h2>
             <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-2xl">
-              This is a collection of notes, ideas, and experiments exploring agentic patterns in development.
-              We&apos;re testing how Claude can analyze issues, plan solutions, implement fixes, run tests, and manage
-              the entire development workflow autonomously.
+              This is a collection of notes, ideas, and experiments exploring
+              agentic patterns in development. We&apos;re testing how Claude can
+              analyze issues, plan solutions, implement fixes, run tests, and
+              manage the entire development workflow autonomously.
             </p>
           </section>
 
@@ -54,16 +56,20 @@ export default function Home() {
             </h2>
             <ul className="space-y-3">
               {[
-                "Automated issue analysis and implementation",
-                "Custom slash commands for repetitive workflows",
-                "Daily session logging and automated commits",
-                "Parallel task execution with git worktrees",
-                "Desktop notifications for Claude input requests",
-                "Test-driven development workflows"
+                'Automated issue analysis and implementation',
+                'Custom slash commands for repetitive workflows',
+                'Daily session logging and automated commits',
+                'Parallel task execution with git worktrees',
+                'Desktop notifications for Claude input requests',
+                'Test-driven development workflows',
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">→</span>
-                  <span className="text-base text-zinc-700 dark:text-zinc-300">{item}</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">
+                    →
+                  </span>
+                  <span className="text-base text-zinc-700 dark:text-zinc-300">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -102,5 +108,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }
