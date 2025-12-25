@@ -36,6 +36,12 @@ This is a collection of notes and ideas about agentic coding with Claude.
     - Implemented comprehensive home page test suite with 9 test cases covering all sections
     - Verified all tests passing successfully across chromium browser
     - Configured GitHub Actions workflow to run e2e tests only when `[e2e]` flag is present in commit message or PR description!!
+- [x] Implement OAuth2 authentication with NextAuth.js and Google
+  - Set up NextAuth.js configuration with Google OAuth provider
+  - Created SignIn and UserProfile components for authentication UI
+  - Implemented session management with SessionProvider wrapper
+  - Added comprehensive unit and E2E tests for authentication flows
+  - Configured Google OAuth2 setup instructions in CLAUDE.md with environment variable documentation
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
 - [ ] Use git worktrees
   - This approach shines.

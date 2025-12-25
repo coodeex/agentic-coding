@@ -83,6 +83,35 @@ The layout applies global Tailwind styles and uses Next.js 16's built-in dark mo
 - **PostCSS**: Used for Tailwind processing
 - **No CSS modules** currently in use—all styling via Tailwind classes
 
+### Authentication (OAuth2 with Google)
+
+The application uses **NextAuth.js** for OAuth2 authentication with Google.
+
+**Key Files:**
+- **`src/app/api/auth/[...nextauth]/route.ts`**: NextAuth configuration and Google provider setup
+- **`src/app/providers.tsx`**: SessionProvider wrapper for client-side session management
+- **`src/components/SignIn.tsx`**: Sign-in component with Google OAuth button
+- **`src/components/UserProfile.tsx`**: User profile display with sign-out functionality
+- **`src/app/page.tsx`**: Home page with conditional auth UI rendering
+
+**Features:**
+- Users can sign in with Google OAuth2
+- Session state managed via NextAuth JWT callbacks
+- User profile (name, email, avatar) displayed when authenticated
+- Sign-out functionality clears session and redirects to home
+- Responsive design works on mobile, tablet, and desktop
+- All auth UI properly tested with unit and E2E tests
+
+**Setup Instructions:**
+1. Copy `.env.local.example` to `.env.local`
+2. Generate `NEXTAUTH_SECRET`: `openssl rand -base64 32`
+3. Get Google OAuth2 credentials from Google Cloud Console:
+   - Go to https://console.cloud.google.com/
+   - Create OAuth 2.0 Client ID (Web application)
+   - Add redirect URI: `http://localhost:3000/api/auth/callback/google`
+4. Update `.env.local` with `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
+5. Start dev server: `cd client && pnpm dev`
+
 ## Development Workflow
 
 ### Recommended Process

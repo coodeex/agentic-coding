@@ -1,6 +1,14 @@
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+// Mock next-auth/react
+jest.mock('next-auth/react', () => ({
+  useSession: jest.fn(() => ({
+    data: null,
+    status: 'unauthenticated'
+  }))
+}))
+
 describe('Home Page', () => {
   it('renders the main heading', () => {
     render(<Home />)
@@ -59,5 +67,11 @@ describe('Home Page', () => {
   it('renders the project overview text', () => {
     render(<Home />)
     expect(screen.getByText(/collection of notes, ideas, and experiments/i)).toBeInTheDocument()
+  })
+
+  it('renders sign in section when unauthenticated', () => {
+    render(<Home />)
+    expect(screen.getByRole('heading', { name: /sign in to continue/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /sign in with google/i })).toBeInTheDocument()
   })
 })

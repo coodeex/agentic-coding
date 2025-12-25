@@ -1,19 +1,40 @@
+"use client";
+
+import { useSession } from "next-auth/react";
+import { SignIn } from "@/components/SignIn";
+import { UserProfile } from "@/components/UserProfile";
+
 export default function Home() {
+  const { data: session } = useSession();
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
       <main className="flex min-h-screen w-full max-w-4xl flex-col justify-between py-16 px-6 sm:px-8 lg:px-16">
         {/* Header */}
-        <div className="flex flex-col gap-2">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black dark:text-white">
-            Agentic Coding
-          </h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
-            Exploring how Claude can be used as an AI coding agent to automate development workflows and improve productivity.
-          </p>
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black dark:text-white">
+              Agentic Coding
+            </h1>
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
+              Exploring how Claude can be used as an AI coding agent to automate development workflows and improve productivity.
+            </p>
+          </div>
+          {session && <UserProfile session={session} />}
         </div>
 
         {/* Main Content */}
         <div className="flex flex-col gap-12">
+          {/* Authentication Status */}
+          {!session && (
+            <section className="space-y-4 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950 p-6">
+              <h2 className="text-lg font-semibold text-black dark:text-white">
+                Sign In to Continue
+              </h2>
+              <SignIn />
+            </section>
+          )}
+
           {/* Project Overview */}
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-black dark:text-white">
