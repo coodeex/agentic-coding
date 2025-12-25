@@ -217,3 +217,11 @@ When running tests, report:
 - Browser coverage for e2e tests
 - Any test failures or warnings
 - Total execution time
+
+
+## Context7 MCP
+Always use context7 when I need code generation, setup or
+configuration steps, or library/API documentation. This means
+you should automatically use the Context7 MCP tools to resolve
+library id and get library docs without me having to
+explicitly ask.

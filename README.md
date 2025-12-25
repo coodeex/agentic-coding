@@ -53,7 +53,9 @@ This is a collection of notes and ideas about agentic coding with Claude.
 - [x] Configure a desktop notification when there is a notification from claude waiting for my input.
 - [ ] If there is going to be a DB in this project, try to create a local database sub agent that can pull data from the local database. This could look into the prisma files to understand the schema and then use postgres MCP etc way to pull data from the database.
 - [ ] Use headless mode to automate running claude in the CI, local scripts and pre-commit hooks. Just use the -p flag to enable headless mode
-- [ ] Add Context7 MCP, which can be used for retrieving up to date Docs
+- [x] Add Context7 MCP, which can be used for retrieving up to date Docs
+  - Added Context7 MCP guidance to CLAUDE.md for automatic library documentation resolution
+  - Configured to resolve library IDs and fetch documentation without explicit user requests
 
 
 ## Notes about Claude code
