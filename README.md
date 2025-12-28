@@ -43,18 +43,11 @@ This is a collection of notes and ideas about agentic coding with Claude.
   - Added comprehensive unit and E2E tests for authentication flows
   - Configured Google OAuth2 setup instructions in CLAUDE.md with environment variable documentation
 - [ ] Create a workflow to automate PR needs to be reviewed and merged to dev branch.
-- [ ] Use git worktrees
-  - This approach shines.
-  - Lightweight approach to multiple checkouts
-  - Create worktrees: 		 worktree add ../project-feature-a feature-a
-  - Launch Claude in each worktree: 		cd ../project-feature-a && claude
-  - Create additional worktrees as needed (repeat steps 1-2 in new terminal tabs)
-  - Some tips:
-    - use good names
-    - one terminal per worktree
-    - setup notifications when Claude needs attention
-    - use separate IDE windows for different worktrees
-    - clean up the worktree when done: 	git worktree remove ../project-feature-a
+- [x] Use git worktrees
+  - Created `/create-worktree-from-issue` skill to automate worktree creation from GitHub issues
+  - Created `/find-issue-string` skill to generate formatted issue strings for branch naming
+  - Documented best practices: use good names, one terminal per worktree, setup notifications, use separate IDE windows
+  - Cleanup command: `git worktree remove ../project-feature-a`
 
 - [x] Configure a desktop notification when there is a notification from claude waiting for my input.
 - [ ] If there is going to be a DB in this project, try to create a local database sub agent that can pull data from the local database. This could look into the prisma files to understand the schema and then use postgres MCP etc way to pull data from the database.
